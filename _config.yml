@@ -1,1 +1,35 @@
-theme: jekyll-theme-cayman
+title: Random Ramblings
+author: Nanda Kishore
+email: madhav.bnk@gmail.com
+description: > # this means to ignore newlines until "show_exerpts:"
+show_excerpts: true # set to true to show excerpts on the homepage
+
+# Minima date format
+# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+sass:
+  sass_dir: _sass
+plainwhite:
+  name: Nanda Kishore
+  tagline: Developer
+  date_format: "%b %-d, %Y"
+  # sitemap: true # set to true to generate sitemap.xml content
+  disqus_shortname: none-da
+
+  # generate social links in footer
+  social_links:
+    twitter: none_daa
+    github:  none-da
+    linkedIn: in/none-da
+    rss: rss
+
+# If you want to link only specific pages in your header, uncomment
+# this and add the path to the pages in order as they should show up
+#header_pages:
+# - about.md
+
+# Build settings
+theme: plainwhite
+
+plugins:
+  - jekyll-seo-tag
+#  - jekyll-feed
