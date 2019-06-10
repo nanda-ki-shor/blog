@@ -27,17 +27,18 @@ Here is a detailed description of how all the above dots are connected.
 8. Make a note of Nameservers mentioned in Cloudflare.
 9. Go to Godaddy `Manage DNS` page for the purchased site and add the nameservers noted above.
 10. Here's how we verify if the domain and the blog are connected properly or not.
-```
-$ dig +noall +answer <your domain>
-<your domain>.		300	IN	A	104.27.XXX.YYY
-<your domain>.		300	IN	A	104.27.ZZZ.AAA
+	~~~
+	$ dig +noall +answer <your domain>
+	<your domain>.		300	IN	A	104.27.XXX.YYY
+	<your domain>.		300	IN	A	104.27.ZZZ.AAA
 
-$ dig +noall +answer <yourgithub-handle>.github.io
-<yourgithub-handle>.github.io.	3600	IN	A	185.199.108.153
-<yourgithub-handle>.github.io.	3600	IN	A	185.199.109.153
-<yourgithub-handle>.github.io.	3600	IN	A	185.199.110.153
-<yourgithub-handle>.github.io.	3600	IN	A	185.199.111.153
-```
+	$ dig +noall +answer <yourgithub-handle>.github.io
+	<yourgithub-handle>.github.io.	3600	IN	A	185.199.108.153
+	<yourgithub-handle>.github.io.	3600	IN	A	185.199.109.153
+	<yourgithub-handle>.github.io.	3600	IN	A	185.199.110.153
+	<yourgithub-handle>.github.io.	3600	IN	A	185.199.111.153
+	~~~
+
 11. Incase you are wondering why the first `dig` is giving you different IP compared to the second `dig`, its because Cloudflare is masquerading your origin (in this case: github.io) and protecting it against all DDoS attacks. Claps!
 
 12. Navigate to <your domain> and find the placeholder content from github pages.
