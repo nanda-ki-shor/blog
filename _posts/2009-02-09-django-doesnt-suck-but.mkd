@@ -5,7 +5,6 @@ date:   2009-02-09 09:29:00 +0530
 categories: django
 permalink: 2009-02-09-django-doesnt-suck-but
 ---
-
 I am a big fan of Django and working on it is really exciting(still after 2 years. I was from java world before). But these days its driving me nuts in one context. Its with my deployment stack. I am using lighttpd + flup + django combination to run my website. It was running fine till recently and then the problem started...
 
 I am facing the dreaded "Unhandled Exception" raised by Flup. The sad part is its raised at the webserver (lighttpd+flup as I call fcgi level) level and not at the application level(Django). So no 500 email is raised about where the problem is.

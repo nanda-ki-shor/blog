@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title:  "Simple Django/python utility to check all the import statements in your project"
@@ -6,7 +5,6 @@ date:   2009-02-11 23:06:00 +0530
 categories: django python imports
 permalink: 2009-02-11-simple-django-utility-to-check-obsolete-imports.mkd
 ---
-
 As I mentioned in my previous posting, I was stuck with Flup exceptions and I am trying to implement what Maxx had suggested. But one interesting thing I did, just before MAXX suggested, to check all the import statements in my entire project codebase. Ofcourse this is not a Django level thing, but at the python level. I started writing one and made that a Django command extension, run as python manage.py imports_checker. It helped me in identifying many faulty imports which could be coined as one of the culprits for the "flup's dreaded exception". The code is mentioned below:
 
 {% highlight python %}
