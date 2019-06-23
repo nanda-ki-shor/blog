@@ -1,0 +1,49 @@
+
+---
+layout: post
+title:  "Simple Django/python utility to check all the import statements in your project"
+date:   2009-02-11 23:06:00 +0530
+categories: django python imports
+permalink: 2009-02-11-simple-django-utility-to-check-obsolete-imports.mkd
+---
+
+As I mentioned in my previous posting, I was stuck with Flup exceptions and I am trying to implement what Maxx had suggested. But one interesting thing I did, just before MAXX suggested, to check all the import statements in my entire project codebase. Ofcourse this is not a Django level thing, but at the python level. I started writing one and made that a Django command extension, run as python manage.py imports_checker. It helped me in identifying many faulty imports which could be coined as one of the culprits for the "flup's dreaded exception". The code is mentioned below:
+
+{% highlight python %}
+class Command(NoArgsCommand):
+    option_list = NoArgsCommand.option_list
+    help = "Scans through the entire project directory and collects all the stale/obsolete import statements"
+    requires_model_validation = True
+
+def import_statement_extractor(self,directory_path,python_file):
+    python_file = '%s/%s' % (directory_path,python_file)
+    file_content = open(python_file).readlines()
+    for line in file_content:
+        line = line.strip()
+        if line.startswith('from') or line.startswith('import'):
+            try:
+                exec(line)
+#                    print '%s:==&gt;:%s:Pass' % (python_file,line)
+            except ImportError:
+                print '%s:XXX:%s:Fail' % (python_file,line)
+
+def directory_py_files(self,parent_directory):
+   import os
+   directory_generator = os.walk(parent_directory)
+   directory_info = directory_generator.next()
+   for file in directory_info[2]:
+       if file.endswith('py'):
+          self.import_statement_extractor(directory_info[0],file)
+   for directory in directory_info[1]:
+       if not directory.startswith('.'):
+          print '\n'
+          self.directory_py_files('%s/%s' % (parent_directory,directory))
+
+def handle_noargs(self, **options):
+    from django.conf import settings
+    self.directory_py_files(settings.ROOT_PATH)
+
+{% endhighlight %}
+This is a generic command, it does not check the settings.INSTALLED_APPS setting for cleaning up imports but it does a decent job of identifying all stale or obsolete imports.
+
+Like this post ? or No ? Leave a reaction below.
