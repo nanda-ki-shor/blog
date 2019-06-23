@@ -6,21 +6,17 @@ categories: django
 permalink: 2009-02-09-django-doesnt-suck-but
 ---
 
-
 I am a big fan of Django and working on it is really exciting(still after 2 years. I was from java world before). But these days its driving me nuts in one context. Its with my deployment stack. I am using lighttpd + flup + django combination to run my website. It was running fine till recently and then the problem started...
-
 
 I am facing the dreaded "Unhandled Exception" raised by Flup. The sad part is its raised at the webserver (lighttpd+flup as I call fcgi level) level and not at the application level(Django). So no 500 email is raised about where the problem is.
 
-
 Our entire team struggled hard to cleanup the codebase, incase of any ambigous imports and someones of that sort, just to be eliminate the chances of raising errors due to the ambiguous imports. And we cleaned up many things in the code. Still the same exception.
-
 
 I checked the lighttpd logs. All I see is "Interface Error/Connection already closed." Its only occurring when my applicaiton is running in FCGI mode. So the problem is with how flup is actually dealing with my code(application).
 
-
 To be frank I am really frustrated with Flup's error handling. It doesn't tell you anything. Worst of all, it shows the same "Unhandled Exception" to the Users. At one point I started posting into recently popular programming questions site [Stackoverflow][stackoverflow] to get some technical help and [made a posting][flup]. I received a few answers which were actually good, but made my opinion about Flup far more worser than I could ever imagine. So I finally decided to replace flup in the whole website configuration stack. But I stumbled upon django's fastcgi.py(which is responsible running django in fcgi and btw thats how I run my app). It had flup dependancies. What the heck? Django is having hardcoded dependancies with the package [whose author itself is not using it][flup-author]? Which means I cant bypass flup till I use Django? How do I get pass this? I dont want to leave Django no matter what, at the same time I cant have my users see this "Unhandled Exception" page just because Django depends on Flup. Now tell me what should I do?
 ---
+
 Like this post ? or No ? Leave a reaction below.
 
 [stackoverflow]: http://stackoverflow.com
