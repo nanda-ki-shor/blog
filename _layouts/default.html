@@ -8,20 +8,20 @@
 <body>
 	<main class="container">
 		<section class="about">
-		<a href="/">
-			<img src="{{ "/assets/portfolio.jpg" | relative_url }}" alt="{{ site.plainwhite.name }}">
-			<h2>{{ site.plainwhite.name }}</h2>
-		</a>
-		<p class="tagline">{{ site.plainwhite.tagline }}</p>
+			<a href="/">
+				<img src="{{ "/assets/portfolio.jpg" | relative_url }}" alt="{{ site.plainwhite.name }}">
+				<h2>{{ site.plainwhite.name }}</h2>
+			</a>
+			<p class="tagline">{{ site.plainwhite.tagline }}</p>
 			<ul class="social">
+				<a href="https://twitter.com/{{ site.plainwhite.social_links.twitter }}">
+					<li><i class="icon-twitter-squared"></i></li>
+				</a>
 				<a href="https://github.com/{{ site.plainwhite.social_links.github }}">
 					<li><i class="icon-github-circled"></i></li>
 				</a>
 				<a href="https://linkedin.com/{{ site.plainwhite.social_links.linkedIn }}">
 					<li><i class="icon-linkedin-squared"></i></li>
-				</a>
-				<a href="https://twitter.com/{{ site.plainwhite.social_links.twitter }}">
-					<li><i class="icon-twitter-squared"></i></li>
 				</a>
 			</ul>
 			<p>&copy; 2019</p>
