@@ -57,7 +57,7 @@ resource "cloudflare_zone_settings_override" "none-da-dot-com-settings" {
   }
 }
 
-resource "cloudflare_page_rule" "always_use_https" {
+resource "cloudflare_page_rule" "page_rule" {
   zone   = "${var.domain}"
   target = "http://${var.domain}/*"
   actions {
