@@ -62,7 +62,7 @@ resource "cloudflare_page_rule" "page_rule" {
     email_obfuscation        = "on"
     server_side_exclude      = "on"
     cache_level              = "basic"
-    browser_cache_ttl        = 3600
+    browser_cache_ttl        = 3599
     always_online            = "on"
     automatic_https_rewrites = "on"
   }
