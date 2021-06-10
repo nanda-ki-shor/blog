@@ -10,7 +10,7 @@ sass:
   sass_dir: _sass
 plainwhite:
   name: Nanda Kishore
-  tagline: Developer
+  tagline: Architect
   date_format: "%b %-d, %Y"
   # sitemap: true # set to true to generate sitemap.xml content
   disqus_shortname: none-da
