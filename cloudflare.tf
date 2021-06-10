@@ -1,39 +1,47 @@
+terraform {
+  required_providers {
+    cloudflare = {
+      source = "cloudflare/cloudflare"
+      version = "~> 2.0"
+    }
+  }
+}
+
 provider "cloudflare" {
-  version = "~> 1.18"
-  # email pulled from $CLOUDFLARE_EMAIL
-  # token pulled from $CLOUDFLARE_TOKEN
+  email   = var.cloudflare_email
+  api_key = var.cloudflare_token
 }
 
 resource "cloudflare_record" "none-da-dot-dev-A-1" {
-  domain  = var.domain
+  zone_id = var.zone_id
   name    = "none-da.dev"
   value   = "185.199.108.153"
   type    = "A"
   proxied = true
 }
 resource "cloudflare_record" "none-da-dot-dev-A-2" {
-  domain  = var.domain
+  zone_id = var.zone_id
   name    = "none-da.dev"
   value   = "185.199.109.153"
   type    = "A"
   proxied = true
 }
 resource "cloudflare_record" "none-da-dot-dev-A-3" {
-  domain  = var.domain
+  zone_id = var.zone_id
   name    = "none-da.dev"
   value   = "185.199.110.153"
   type    = "A"
   proxied = true
 }
 resource "cloudflare_record" "none-da-dot-dev-A-4" {
-  domain  = var.domain
+  zone_id = var.zone_id
   name    = "none-da.dev"
   value   = "185.199.111.153"
   type    = "A"
   proxied = true
 }
 resource "cloudflare_record" "www" {
-  domain  = var.domain
+  zone_id = var.zone_id
   name    = "www"
   value   = "none-da.github.io"
   type    = "CNAME"
@@ -41,7 +49,7 @@ resource "cloudflare_record" "www" {
 }
 
 resource "cloudflare_zone_settings_override" "none-da-dot-dev-settings" {
-  name = var.domain
+  zone_id = var.zone_id
 
   settings {
     tls_1_3                  = "on"
