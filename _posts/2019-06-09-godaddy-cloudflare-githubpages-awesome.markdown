@@ -48,7 +48,7 @@ Here is a detailed description of how all the above dots are connected.
 Like this post ? or No ? Leave a reaction below.
 
 [jekyll]: https://jekyllrb.com/
-[theme]: https://github.com/thelehhman/plainwhite-jekyll
+[theme]: https://github.com/samarsault/plainwhite-jekyll
 [ghpages]:   https://pages.github.com/
 [godaddy]:   https://godaddy.com/
 [cloudflare]:   https://cloudflare.com/
