@@ -2,7 +2,7 @@ terraform {
   required_providers {
     cloudflare = {
       source = "cloudflare/cloudflare"
-      version = "~> 2.0"
+      version = "~> 3.14"
     }
   }
 }
@@ -12,28 +12,28 @@ provider "cloudflare" {
   api_key = var.cloudflare_token
 }
 
-resource "cloudflare_record" "none-da-dot-dev-A-1" {
+resource "cloudflare_record" "nandakishore-dot-dev-A-1" {
   zone_id = var.zone_id
   name    = "nandakishore.dev"
   value   = "185.199.108.153"
   type    = "A"
   proxied = true
 }
-resource "cloudflare_record" "none-da-dot-dev-A-2" {
+resource "cloudflare_record" "nandakishore-dot-dev-A-2" {
   zone_id = var.zone_id
   name    = "nandakishore.dev"
   value   = "185.199.109.153"
   type    = "A"
   proxied = true
 }
-resource "cloudflare_record" "none-da-dot-dev-A-3" {
+resource "cloudflare_record" "nandakishore-dot-dev-A-3" {
   zone_id = var.zone_id
   name    = "nandakishore.dev"
   value   = "185.199.110.153"
   type    = "A"
   proxied = true
 }
-resource "cloudflare_record" "none-da-dot-dev-A-4" {
+resource "cloudflare_record" "nandakishore-dot-dev-A-4" {
   zone_id = var.zone_id
   name    = "nandakishore.dev"
   value   = "185.199.111.153"
@@ -48,7 +48,7 @@ resource "cloudflare_record" "www" {
   proxied = true
 }
 
-resource "cloudflare_zone_settings_override" "none-da-dot-dev-settings" {
+resource "cloudflare_zone_settings_override" "nandakishore-dot-dev-settings" {
   zone_id = var.zone_id
 
   settings {
