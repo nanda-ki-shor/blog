@@ -14,28 +14,28 @@ provider "cloudflare" {
 
 resource "cloudflare_record" "none-da-dot-dev-A-1" {
   zone_id = var.zone_id
-  name    = "none-da.dev"
+  name    = "nandakishore.dev"
   value   = "185.199.108.153"
   type    = "A"
   proxied = true
 }
 resource "cloudflare_record" "none-da-dot-dev-A-2" {
   zone_id = var.zone_id
-  name    = "none-da.dev"
+  name    = "nandakishore.dev"
   value   = "185.199.109.153"
   type    = "A"
   proxied = true
 }
 resource "cloudflare_record" "none-da-dot-dev-A-3" {
   zone_id = var.zone_id
-  name    = "none-da.dev"
+  name    = "nandakishore.dev"
   value   = "185.199.110.153"
   type    = "A"
   proxied = true
 }
 resource "cloudflare_record" "none-da-dot-dev-A-4" {
   zone_id = var.zone_id
-  name    = "none-da.dev"
+  name    = "nandakishore.dev"
   value   = "185.199.111.153"
   type    = "A"
   proxied = true

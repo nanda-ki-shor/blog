@@ -1,5 +1,5 @@
 variable domain {
-  default = "none-da.dev"
+  default = "nandakishore.dev"
 }
 
 variable zone_id {
