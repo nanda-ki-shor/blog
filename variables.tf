@@ -3,7 +3,7 @@ variable domain {
 }
 
 variable zone_id {
-  default = "cc1635f8d56bf5d4ded853b5b1648a05"
+  default = "5ccb011513c17fe12e384df6b1a56ca5"
 }
 
 variable cloudflare_email {
