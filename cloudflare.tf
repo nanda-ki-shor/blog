@@ -2,7 +2,7 @@ terraform {
   required_providers {
     cloudflare = {
       source = "cloudflare/cloudflare"
-      version = "~> 3.14"
+      version = "~> 3.23"
     }
   }
 }
@@ -106,7 +106,6 @@ resource "cloudflare_page_rule" "page_rule" {
     server_side_exclude      = "on"
     cache_level              = "basic"
     browser_cache_ttl        = 3600
-    always_online            = "on"
     automatic_https_rewrites = "on"
   }
   status = "active"
