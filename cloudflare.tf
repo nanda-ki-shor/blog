@@ -97,16 +97,16 @@ resource "cloudflare_zone_settings_override" "nandakishore-dot-dev-settings" {
   }
 }
 
-resource "cloudflare_page_rule" "page_rule" {
-  zone_id = var.zone_id
-  target  = format("http://%s/*", var.domain)
-  actions {
-    always_use_https         = true
-    email_obfuscation        = "on"
-    server_side_exclude      = "on"
-    cache_level              = "basic"
-    browser_cache_ttl        = 3600
-    automatic_https_rewrites = "on"
-  }
-  status = "active"
-}
+# resource "cloudflare_page_rule" "page_rule" {
+#   zone_id = var.zone_id
+#   target  = format("http://%s/*", var.domain)
+#   actions {
+#     always_use_https         = true
+#     email_obfuscation        = "on"
+#     server_side_exclude      = "on"
+#     cache_level              = "basic"
+#     browser_cache_ttl        = 3600
+#     automatic_https_rewrites = "on"
+#   }
+#   status = "active"
+# }
