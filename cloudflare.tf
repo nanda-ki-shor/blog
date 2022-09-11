@@ -73,7 +73,7 @@ resource "cloudflare_record" "nandakishore-dot-dev-TXT" {
   name    = "_github-pages-challenge-none-da.nandakishore.dev"
   value   = "3000a8b7165779f7b3f98af89fb91b"
   type    = "TXT"
-  proxied = true
+  # proxied = true
 }
 resource "cloudflare_record" "www" {
   zone_id = var.zone_id
