@@ -83,19 +83,19 @@ resource "cloudflare_record" "www" {
   proxied = true
 }
 
-resource "cloudflare_zone_settings_override" "nandakishore-dot-dev-settings" {
-  zone_id = var.zone_id
+# resource "cloudflare_zone_settings_override" "nandakishore-dot-dev-settings" {
+#   zone_id = var.zone_id
 
-  settings {
-    tls_1_3                  = "on"
-    ssl                      = "full"
-    always_use_https         = "on"
-    min_tls_version          = "1.0"
-    opportunistic_encryption = "on"
-    automatic_https_rewrites = "on"
-    opportunistic_onion      = "on"
-  }
-}
+#   settings {
+#     tls_1_3                  = "on"
+#     ssl                      = "full"
+#     always_use_https         = "on"
+#     min_tls_version          = "1.0"
+#     opportunistic_encryption = "on"
+#     automatic_https_rewrites = "on"
+#     opportunistic_onion      = "on"
+#   }
+# }
 
 # resource "cloudflare_page_rule" "page_rule" {
 #   zone_id = var.zone_id
