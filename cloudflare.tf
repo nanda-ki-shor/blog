@@ -40,6 +40,41 @@ resource "cloudflare_record" "nandakishore-dot-dev-A-4" {
   type    = "A"
   proxied = true
 }
+resource "cloudflare_record" "nandakishore-dot-dev-AAAA-1" {
+  zone_id = var.zone_id
+  name    = "nandakishore.dev"
+  value   = "2606:50c0:8000::153"
+  type    = "AAAA"
+  proxied = true
+}
+resource "cloudflare_record" "nandakishore-dot-dev-AAAA-2" {
+  zone_id = var.zone_id
+  name    = "nandakishore.dev"
+  value   = "2606:50c0:8001::153"
+  type    = "AAAA"
+  proxied = true
+}
+resource "cloudflare_record" "nandakishore-dot-dev-AAAA-3" {
+  zone_id = var.zone_id
+  name    = "nandakishore.dev"
+  value   = "2606:50c0:8002::153"
+  type    = "AAAA"
+  proxied = true
+}
+resource "cloudflare_record" "nandakishore-dot-dev-AAAA-4" {
+  zone_id = var.zone_id
+  name    = "nandakishore.dev"
+  value   = "2606:50c0:8003::153"
+  type    = "AAAA"
+  proxied = true
+}
+resource "cloudflare_record" "nandakishore-dot-dev-TXT" {
+  zone_id = var.zone_id
+  name    = "_github-pages-challenge-none-da.nandakishore.dev"
+  value   = "3000a8b7165779f7b3f98af89fb91b"
+  type    = "TXT"
+  proxied = true
+}
 resource "cloudflare_record" "www" {
   zone_id = var.zone_id
   name    = "www"
